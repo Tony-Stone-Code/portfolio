@@ -94,8 +94,8 @@ export default function Hero() {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm mb-6"
         >
@@ -105,8 +105,8 @@ export default function Hero() {
 
         {/* Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 30 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.3 }}
           className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4"
         >
@@ -116,8 +116,8 @@ export default function Hero() {
 
         {/* Typing role */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.4 }}
           className="h-12 flex items-center justify-center mb-6"
         >
@@ -129,8 +129,8 @@ export default function Hero() {
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.5 }}
           className="text-gray-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
         >
@@ -149,8 +149,8 @@ export default function Hero() {
 
         {/* Social links */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.6 }}
           className="flex items-center justify-center gap-3 mb-10"
         >
@@ -170,8 +170,8 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
@@ -195,16 +195,13 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
+      <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-500 cursor-pointer"
         onClick={() => scrollToSection('about')}
       >
         <span className="text-xs uppercase tracking-widest">Scroll</span>
         <ChevronDown size={18} className="animate-bounce" />
-      </motion.div>
+      </div>
     </div>
   )
 }
