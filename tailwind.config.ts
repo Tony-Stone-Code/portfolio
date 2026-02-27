@@ -28,9 +28,6 @@ const config: Config = {
           dark: '#0891b2',
         },
       },
-      fontFamily: {
-        mono: ['var(--font-mono)', 'monospace'],
-      },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
         'pulse-slow': 'pulse 3s ease-in-out infinite',

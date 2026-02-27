@@ -10,15 +10,15 @@ const stats = [
 
 const codeLines = [
   { type: 'comment', text: '# Tony Stone – Developer Profile' },
-  { type: 'keyword', text: 'class ', suffix: 'TonyStone', suffixType: 'class' },
-  { type: 'plain', text: '    skills = [' },
-  { type: 'string', text: '        "Python"', suffix: ', "AI/ML"', suffixType: 'string' },
-  { type: 'string', text: '        "FastAPI"', suffix: ', "React"', suffixType: 'string' },
-  { type: 'string', text: '        "Cybersecurity"', suffix: ',', suffixType: 'plain' },
-  { type: 'plain', text: '    ]' },
-  { type: 'plain', text: '' },
-  { type: 'keyword', text: '    def ', suffix: 'solve_problems', suffixType: 'func' },
-  { type: 'plain', text: '        return ', suffix: '"Innovative Solutions 🚀"', suffixType: 'string' },
+  { type: 'class',   text: 'class ', name: 'TonyStone' },
+  { type: 'plain',   text: '    skills = [' },
+  { type: 'strlist', text: '        "Python"', extra: ', "AI/ML"' },
+  { type: 'strlist', text: '        "FastAPI"', extra: ', "React"' },
+  { type: 'strlist', text: '        "Cybersecurity"', extra: ',' },
+  { type: 'plain',   text: '    ]' },
+  { type: 'blank',   text: '' },
+  { type: 'func',    text: '    def ', name: 'solve_problems', args: '(self):' },
+  { type: 'ret',     text: '        return ', val: '"Innovative Solutions 🚀"' },
 ]
 
 export default function About() {
@@ -69,41 +69,34 @@ export default function About() {
                     {line.type === 'comment' && (
                       <span className="code-comment">{line.text}</span>
                     )}
-                    {line.type === 'keyword' && (
+                    {line.type === 'class' && (
                       <>
                         <span className="code-keyword">{line.text}</span>
-                        {line.suffix && (
-                          <span className={`code-${line.suffixType}`}>{line.suffix}</span>
-                        )}
-                        {line.type === 'keyword' && line.text.includes('class') && (
-                          <span className="code-plain">:</span>
-                        )}
-                      </>
-                    )}
-                    {line.type === 'string' && (
-                      <>
-                        <span className="code-string">{line.text}</span>
-                        {line.suffix && (
-                          <span className={`code-${line.suffixType}`}>{line.suffix}</span>
-                        )}
-                      </>
-                    )}
-                    {line.type === 'plain' && (
-                      <>
-                        <span className="text-gray-300">{line.text}</span>
-                        {line.suffix && (
-                          <span className={`code-${line.suffixType}`}>{line.suffix}</span>
-                        )}
+                        <span className="code-class">{line.name}</span>
+                        <span className="text-gray-300">:</span>
                       </>
                     )}
                     {line.type === 'func' && (
                       <>
                         <span className="code-keyword">{line.text}</span>
-                        {line.suffix && (
-                          <span className="code-func">{line.suffix}</span>
-                        )}
-                        <span className="text-gray-300">(self):</span>
+                        <span className="code-func">{line.name}</span>
+                        <span className="text-gray-300">{line.args}</span>
                       </>
+                    )}
+                    {line.type === 'strlist' && (
+                      <>
+                        <span className="code-string">{line.text}</span>
+                        <span className="text-gray-300">{line.extra}</span>
+                      </>
+                    )}
+                    {line.type === 'ret' && (
+                      <>
+                        <span className="text-gray-300">{line.text}</span>
+                        <span className="code-string">{line.val}</span>
+                      </>
+                    )}
+                    {(line.type === 'plain' || line.type === 'blank') && (
+                      <span className="text-gray-300">{line.text}</span>
                     )}
                   </motion.div>
                 ))}
