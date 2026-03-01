@@ -5,7 +5,6 @@ import Services from '@/components/services/Services'
 import Projects from '@/components/projects/Projects'
 import GammaCube from '@/components/gammacube/GammaCube'
 import Skills from '@/components/skills/Skills'
-import GitHubStats from '@/components/github-stats/GitHubStats'
 import Testimonials from '@/components/testimonials/Testimonials'
 import FAQ from '@/components/faq/FAQ'
 import Contact from '@/components/contact/Contact'
@@ -34,9 +33,6 @@ export default function Home() {
       </section>
       <section id="skills">
         <Skills />
-      </section>
-      <section id="github">
-        <GitHubStats />
       </section>
       <section id="testimonials">
         <Testimonials />
