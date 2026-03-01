@@ -10,7 +10,7 @@ const statsImages = [
     wide: true,
   },
   {
-    src: 'https://github-readme-streak-stats.herokuapp.com/?user=Tony-Stone-Code&theme=tokyonight&hide_border=true&background=0d1117',
+    src: 'https://streak-stats.demolab.com/?user=Tony-Stone-Code&theme=tokyonight&hide_border=true&background=0d1117',
     alt: 'GitHub Streak',
     wide: true,
   },
